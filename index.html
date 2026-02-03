@@ -46,6 +46,17 @@ FundraiseUp.on('checkout.open', function(details) {
   });
 });
 </script>
+
+<script>
+FundraiseUp.on('donation.complete', function(details) {
+  window.dataLayer.push({
+    event: 'fu_donation_complete',
+    value: details.amount,
+    currency: details.currency
+  });
+});
+</script>
+
   
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
