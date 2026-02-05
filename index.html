@@ -2,153 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Helping Hand Charity</title>
+  <title>Helping Hand – Donation Demo</title>
+
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M5J975TV');</script>
-<!-- End Google Tag Manager -->
-  <!-- Google Analytics GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HR50235D7N"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-HR50235D7N');
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M5J975TV');
   </script>
-  
-  <!-- Fundraise Up Widget -->
+  <!-- End Google Tag Manager -->
+
+  <!-- Fundraise Up: the new standard for online giving -->
   <script>
-    (function(w,d,s,n,a){if(!w[n]){var l='call,catch,on,once,set,then,track'
-    .split(','),i,o=function(n){return'function'==typeof n?o.l.push([arguments])&&o
-    :function(){return o.l.push([n,arguments])&&o}},t=d.getElementsByTagName(s)[0],
-    j=d.createElement(s);j.async=!0;j.src='https://cdn.fundraiseup.com/widget/'+a;
-    t.parentNode.insertBefore(j,t);o.s=Date.now();o.v=4;o.h=w.location.href;o.l=[];
-    for(i=0;i<7;i++)o[l[i]]=o(l[i]);w[n]=o}
+    (function(w,d,s,n,a){
+      if(!w[n]){
+        var l='call,catch,on,once,set,then,track'.split(','),
+            i,
+            o=function(n){
+              return typeof n === 'function' ? (o.l.push([arguments]) && o)
+              : function(){ o.l.push([n,arguments]) && o };
+            },
+            t=d.getElementsByTagName(s)[0],
+            j=d.createElement(s);
+        j.async=true;
+        j.src='https://cdn.fundraiseup.com/widget/'+a;
+        t.parentNode.insertBefore(j,t);
+        o.s=Date.now();
+        o.v=4;
+        o.h=w.location.href;
+        o.l=[];
+        for(i=0;i<7;i++) o[l[i]]=o(l[i]);
+        w[n]=o;
+      }
     })(window,document,'script','FundraiseUp','AEMZUDUM');
   </script>
-  
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .main-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    
-    h1 {
-      color: #2c3e50;
-      margin-bottom: 40px;
-      font-size: 2.5em;
-    }
-    
-    .donate-btn {
-      background: #3498db;
-      color: white;
-      border: none;
-      padding: 20px 50px;
-      font-size: 1.5em;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    
-    .donate-btn:hover {
-      background: #2980b9;
-    }
-    
-    footer {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-    }
-  </style>
+  <!-- End Fundraise Up -->
+
 </head>
-
 <body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5J975TV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  <!-- Hidden Fundraise Up Button -->
-  <a href="#XJKDHSTQ" id="fundraiseup-anchor" style="display: none;"></a>
-  
-  <div class="main-content">
-    <h1>Helping Hand Charity</h1>
-    <button id="donate-btn" class="donate-btn">Donate Now</button>
-  </div>
-  
-  <footer>
-    Fundraise Up + Google Analytics 4 Integration Demo
-  </footer>
 
-  <!-- Event Tracking Script -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5J975TV"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <h1>Helping Hand</h1>
+  <a href="#XJKDHSTQ" id="donate-btn">Donate Now</a>
+
+  <!-- Checkout Tracking -->
   <script>
-    // Track button click
-    document.getElementById("donate-btn").addEventListener("click", function() {
-      // Trigger Fundraise Up
-      document.getElementById("fundraiseup-anchor").click();
-      
-      // Send to GA4
-      gtag('event', 'donate_button_click', {
-        event_category: 'Fundraise Up',
-        event_label: 'Donate Button'
+    // Checkout open event
+    FundraiseUp.on('checkout.open', function(details) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'fu_checkout_open' });
+    });
+
+    // Donation complete event
+    FundraiseUp.on('donation.complete', function(details) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'fu_donation_complete',
+        value: details.amount,
+        currency: details.currency
       });
     });
-    
-    // Fundraise Up Event Tracking
-    document.addEventListener('DOMContentLoaded', function() {
-      function setupTracking() {
-        if (typeof FundraiseUp !== 'undefined') {
-          // Track checkout open
-          FundraiseUp.on('checkout.open', function() {
-            gtag('event', 'checkout_begin', {
-              event_category: 'Fundraise Up',
-              event_label: 'Checkout Opened'
-            });
-          });
-          
-          // Track donation completion
-          FundraiseUp.on('donation.complete', function(details) {
-            const amount = details.amount || 0;
-            
-            // Send purchase event
-            gtag('event', 'purchase', {
-              transaction_id: 'TEST_' + Date.now(),
-              value: amount,
-              currency: details.currency || 'USD',
-              items: [{
-                item_id: 'donation',
-                item_name: 'Charity Donation',
-                price: amount,
-                quantity: 1
-              }]
-            });
-          });
-        } else {
-          setTimeout(setupTracking, 500);
-        }
-      }
-      
-      setupTracking();
+
+    // Button click event
+    document.getElementById("donate-btn").addEventListener("click", function() {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "donate_button_click" });
     });
   </script>
+
 </body>
 </html>
