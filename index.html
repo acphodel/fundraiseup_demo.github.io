@@ -38,24 +38,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!--Checkout Tracking-->
-  <script>
-FundraiseUp.on('checkout.open', function(details) {
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: 'fu_checkout_open'
+<script>
+  FundraiseUp.on('checkout.open', function(details) {
+    window.dataLayer.push({ event: 'fu_checkout_open' });
   });
-});
+
+  FundraiseUp.on('donation.complete', function(details) {
+    window.dataLayer.push({
+      event: 'fu_donation_complete',
+      value: details.amount,
+      currency: details.currency
+    });
+  });
 </script>
 
-<script>
-FundraiseUp.on('donation.complete', function(details) {
-  window.dataLayer.push({
-    event: 'fu_donation_complete',
-    value: details.amount,
-    currency: details.currency
-  });
-});
-</script>
 
   <script>
 document.getElementById("donate-btn").addEventListener("click", function() {
