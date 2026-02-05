@@ -34,7 +34,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
   
   <h1>Helping Hand</h1>
-  <a href="#XJKDHSTQ">Donate_Now</a>
+<a href="#XJKDHSTQ" id="donate-btn">Donate Now</a>
 
 
 <!--Checkout Tracking-->
@@ -57,7 +57,15 @@ FundraiseUp.on('donation.complete', function(details) {
 });
 </script>
 
-  
+  <script>
+document.getElementById("donate-btn").addEventListener("click", function() {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "donate_button_click"
+  });
+});
+</script>
+
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe>
