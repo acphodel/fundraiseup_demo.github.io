@@ -82,6 +82,20 @@
       window.dataLayer.push({ event: "donate_button_click" });
     });
   </script>
+<h2>Demo: Trigger Donation Complete</h2>
+<button id="demo-donation-btn">Simulate Donation</button>
+
+<script>
+document.getElementById("demo-donation-btn").addEventListener("click", function() {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'fu_donation_complete',
+    value: 700,            // demo amount
+    currency: 'USD'
+  });
+  alert("Donation Complete event pushed to dataLayer!");
+});
+</script>
 
 </body>
 </html>
